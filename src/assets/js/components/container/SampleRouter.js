@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Grommet, Box} from "grommet";
 
 import styled from 'styled-components';
 
@@ -22,6 +23,16 @@ function ParamsExample() {
                 <Wrapper>
                     <Title>Hello World, this is my first styled component!</Title>
                 </Wrapper>
+
+                <Box
+                    direction="row"
+                    border={{ color: 'brand', size: 'large' }}
+                    pad="medium"
+                >
+                    <Box pad="small" background="dark-3" />
+                    <Box pad="medium" background="light-3" />
+                </Box>
+
                 <ul>
                     <li>
                         <Link to="/netflix">Netflix !</Link>
