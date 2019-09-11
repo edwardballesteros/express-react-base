@@ -1,12 +1,11 @@
 import express from 'express';
 import responseMiddleware from '../middlewares/response';
-import IndexController from '../controllers/IndexController';
+import Bootstrap from "./bootstrap";
 
 const routes = express.Router();
-const index = new IndexController();
+const routesBootstrap = new Bootstrap();
 
+routesBootstrap.init(routes);
 routes.use(responseMiddleware);
-routes.get('/', index.indexAction);
-
 
 export default routes;
