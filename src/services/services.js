@@ -11,13 +11,14 @@ class Services {
     }
 
     _get(options) {
-
         const endpoint = _.get(options, 'endPoint', '');
         const path = _.get(options, 'path', '');
         const url = endpoint + path;
 
         const params = _.get(options, 'params', {});
         const query = querystring.stringify(params);
+
+        console.log('servicceee' , url, query);
 
         return new Promise((resolve, reject) => {
             this.client.get(url, query)
