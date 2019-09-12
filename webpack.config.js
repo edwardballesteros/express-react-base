@@ -1,5 +1,6 @@
 module.exports = {
     entry: './src/assets/index.js',
+    watch:true,
     module: {
         rules: [
             {

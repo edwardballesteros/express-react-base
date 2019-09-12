@@ -1,4 +1,12 @@
+import Redirector from '../services/redirector';
+
 class IndexController {
+
+  constructor(){
+    this.redirector = new Redirector();
+  }
+
+
   /**
    * Ping endpoint.
    *
@@ -7,14 +15,16 @@ class IndexController {
    *
    * @returns {Object}
    */
-  indexAction(request, response) {
+   indexAction(request, response) {
 
     return response.render('index', {});
   }
 
-  testAction(request, response) {
+  async testAction(request, response) {
 
-    return response.json({data:1});
+    const result = await this.redirector.get();
+
+    return response.json({data:result});
   }
 
   postAction(request, response) {

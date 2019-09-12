@@ -1,5 +1,6 @@
 import _ from "lodash";
 import RoutesConfig from "../configs/routes";
+import MiddleWare from '../middlewares/default'
 
 class Bootstrap {
 
@@ -15,7 +16,7 @@ class Bootstrap {
                 const controllerAction = _.get(newController, actionName);
 
                 // router.{requestType}('/', middleWare, ControllerClass.ActionFn.bind(ControllerClass));
-                routes[ requestType ]( requestPath,  controllerAction).bind(newController);
+                routes[ requestType ]( requestPath, MiddleWare, controllerAction.bind(newController));
             }
             catch(e) {
                 console.log('Error:', e.message);
