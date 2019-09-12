@@ -16,8 +16,7 @@ class Redirector extends BaseService {
             path: '/Redirector/v1.0/getRedirect',
             params : {
                 site: 'carparts.com',
-                page_url: url,
-                apiKey: 'anzhbnJvaXVz'
+                page_url: url
             }
         };
 

@@ -18,10 +18,8 @@ class Services {
         const params = _.get(options, 'params', {});
         const query = querystring.stringify(params);
 
-        console.log('servicceee' , url, query);
-
         return new Promise((resolve, reject) => {
-            this.client.get(url, query)
+            this.client.get(url , { params: params  })
                 .then(response => {
                     resolve(_.get(response, 'data'));
                 })
